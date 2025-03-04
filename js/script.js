@@ -1,50 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Переключение мобильной навигации
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.container.nav-links');
 
-    // Плавная прокрутка к якорям
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            const isActive = navLinks.classList.contains('active');
+            navLinks.classList.toggle('active');
+            
+            // Устанавливаем max-height для анимации при закрытии
+            if (!isActive) {
+                navLinks.style.maxHeight = navLinks.scrollHeight + 'px'; // Устанавливаем реальную высоту
+            } else {
+                navLinks.style.maxHeight = null; // Сбрасываем для закрытия
+            }
+            
+            console.log('Бургер нажат');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navLinks.style.maxHeight = null; // Сбрасываем высоту при закрытии
             });
         });
-    });
 
-    // Подсветка активной секции в навигации при прокрутке
-    window.addEventListener('scroll', () => {
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.navbar a');
-        
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 150) {
-                current = section.getAttribute('id');
+        // Сбрасываем inline-стили при изменении размера окна (для десктопа)
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.maxHeight = null;
+                navLinks.classList.remove('active');
             }
         });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // Переключение мобильной навигации (гамбургер-меню)
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    navToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-
-    // Закрытие меню при клике на ссылку (опционально, для удобства)
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-        });
-    });
+    } else {
+        console.error('Ошибка: .nav-toggle или .container.nav-links не найдены');
+    }
 });

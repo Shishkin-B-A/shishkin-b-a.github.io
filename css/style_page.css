@@ -1,0 +1,99 @@
+/* Специфичные стили для text-large.html */
+.text-large-section {
+    padding: 4rem 0;
+    background: #fff;
+}
+
+/* Контейнер для текста и ссылок */
+.text-wrapper {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+/* Блок ссылок */
+.text-links {
+    flex: 0 0 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.text-links .title {
+    margin-bottom: 1rem;
+}
+
+/* Cтиль для кнопок ссылок */
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    color: white;
+    background: var(--secondary);
+    transition: var(--transition);
+    width: 50%;
+    font-size: 0.9rem;
+}
+
+.btn-link:hover {
+    transform: translateY(-2px);
+    filter: brightness(90%);
+}
+
+/* Основной текстовый блок */
+.text-large {
+    color: #000;
+    font-size: 1.25rem;
+    line-height: 2;
+    flex: 1; 
+    min-width: 0; 
+    max-width: 800px;
+}
+
+.text-large p {
+    margin-bottom: 1.5rem;
+}
+
+.text-large h3 {
+    margin-top: 0;
+}
+
+/* Подвал с кнопками */
+.text-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 2rem auto 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .text-large { 
+        font-size: 1.15rem; 
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    .text-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .text-wrapper {
+        flex-direction: column;
+    }
+    .text-links {
+        flex: none;
+        width: 100%;
+    }
+    .btn-link {
+        width: 100%;
+    }
+}

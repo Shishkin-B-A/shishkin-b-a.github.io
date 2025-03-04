@@ -1,0 +1,53 @@
+{
+  "type": "network",
+  "version": "1.0",
+  "data": "data.json",
+  "logo": {
+    "file": "",
+    "link": "",
+    "text": "Shishkin A. Boris"
+  },
+  "text": {
+    "more": "",
+    "intro": "Harmonization tactics and related topics of Russian-language political media discourse",
+    "title": "Harmonization tactics and related themes of Russian-language political media discourse"
+  },
+  "legend": {
+    "edgeLabel": "Connections between tactics and themes",
+    "colorLabel": "Tactics and related themes groups",
+    "nodeLabel": "Tactics and themes"
+  },
+  "features": {
+    "search": true,
+    "groupSelectorAttribute": "Label",
+    "hoverBehavior": "default"
+  },
+  "informationPanel": {
+    "groupByEdgeDirection": false,
+    "imageAttribute": false
+  },
+  "sigma": {
+    "drawingProperties": {
+      "defaultEdgeType": "curve",
+      "defaultHoverLabelBGColor": "#002147",
+      "defaultLabelBGColor": "#ddd",
+      "activeFontStyle": "bold",
+      "defaultLabelColor": "#000",
+      "labelThreshold": 0.5,
+      "defaultLabelHoverColor": "#fff",
+      "fontStyle": "bold",
+      "hoverFontStyle": "bold",
+      "defaultLabelSize": 14
+    },
+    "graphProperties": {
+      "maxEdgeSize": 5,
+      "minEdgeSize": 0.5,
+      "minNodeSize": 8,
+      "maxNodeSize": 28
+    },
+    "mouseProperties": {
+      "maxRatio": 20,
+      "minRatio": 0.75
+    }
+  }
+}

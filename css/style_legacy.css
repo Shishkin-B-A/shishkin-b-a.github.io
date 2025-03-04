@@ -1,0 +1,279 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --gap: 2rem;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system;
+    line-height: 1.6;
+    color: var(--dark);
+    background: var(--light);
+}
+
+.navbar {
+    background: var(--primary);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    background: var(--secondary);
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background: var(--secondary);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap);
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.button.doi { background: #007bff; color: white; }
+.button.pdf { background: #dc3545; color: white; }
+.button.demo { background: #28a745; color: white; }
+.button.github { background: #333; color: white; }
+
+.tech-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.tag.python { background: #3776ab; color: white; }
+.tag.tensorflow { background: #ff6f00; color: white; }
+
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column; }
+    .section-title { font-size: 2rem; }
+}
+
+/* Стили для кнопок скачивания */
+.button.download {
+    background: #27ae60;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.button.download:hover {
+    background: #219a52;
+    transform: translateY(-2px);
+}
+
+.fa-file-archive {
+    color: #f1c40f;
+    margin-right: 8px;
+}
+
+.fa-download {
+    margin-right: 8px;
+}
+
+/* Основные заголовки секций */
+.section-main-title {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-main-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 3px;
+    background: #3498db;
+}
+
+/* Стили для подсекций */
+.subsection {
+    margin: 4rem 0;
+}
+
+.subsection-title {
+    font-size: 1.8rem;
+    color: #34495e;
+    border-left: 4px solid #3498db;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-weight: 600;
+}
+
+/* Стили для карточек */
+.software-title {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.software-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #ecf0f1;
+}
+
+.software-description {
+    color: #7f8c8d;
+    line-height: 1.8;
+    min-height: 80px;
+}
+
+.version {
+    display: block;
+    font-size: 0.85rem;
+    color: #95a5a6;
+    margin-top: 0.8rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .section-main-title {
+        font-size: 2rem;
+    }
+    
+    .subsection-title {
+        font-size: 1.5rem;
+    }
+    
+    .software-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Стили проектов */
+.project-title {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+.project-description {
+    color: #7f8c8d;
+    line-height: 1.7;
+    min-height: 80px;
+}
+
+.meta-info {
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.tech-tag {
+    background: #ecf0f1;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+.button.demo {
+    background: #3498db;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.3s;
+}
+
+.button.demo.disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+}
+
+.button.demo:hover:not(.disabled) {
+    background: #2980b9;
+    transform: translateY(-2px);
+}

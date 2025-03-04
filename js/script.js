@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Плавная прокрутка к якорям
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Подсветка активной секции в навигации при прокрутке
     window.addEventListener('scroll', () => {
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.navbar a');
@@ -28,6 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if (link.getAttribute('href') === `#${current}`) {
                 link.classList.add('active');
             }
+        });
+    });
+
+    // Переключение мобильной навигации (гамбургер-меню)
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Закрытие меню при клике на ссылку (опционально, для удобства)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
         });
     });
 });

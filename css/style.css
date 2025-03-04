@@ -164,11 +164,38 @@ body {
     color: white;
     margin: 0.3rem;
     background: var(--text-gray);
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
 .tag-python { background: #3776ab; }
 .tag-tensorflow { background: #ff6f00; }
 .tag-default { background: #e0e6ea; color: var(--dark); }
+
+/* Стиль для ссылок с изображением */
+.tag-link {
+    padding: 0.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tag-link img {
+    margin: 0;
+    display: block;
+    height: auto;
+    max-height: 100%;
+    width: auto;
+}
+
+.meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+}
 
 /* Описание */
 .description {
@@ -184,6 +211,26 @@ body {
     margin-top: 1rem;
 }
 
+/* Уведомление */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--secondary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    box-shadow: var(--shadow-md);
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.notification.active {
+    opacity: 1;
+}
+
 /* Адаптивность */
 @media (max-width: 768px) {
     .nav-toggle {
@@ -196,7 +243,7 @@ body {
     }
 
     .container.nav-links {
-        display: block; /* Базовое состояние для анимации */
+        display: block;
         flex-direction: column;
         align-items: flex-start;
         position: absolute;
@@ -204,19 +251,19 @@ body {
         left: 0;
         width: 100%;
         background: var(--primary);
-        padding: 0 2rem; /* Уменьшено для анимации */
+        padding: 0 2rem;
         box-shadow: var(--shadow-sm);
         z-index: 1000;
-        max-height: 0; /* Скрыто по умолчанию */
-        overflow: hidden; /* Убираем переполнение */
-        transition: max-height 0.3s ease, opacity 0.3s ease; /* Плавная анимация */
-        opacity: 0; /* Прозрачность для эффекта */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
     }
 
     .container.nav-links.active {
-        max-height: 300px; /* Достаточная высота для контента */
-        padding: 1rem 2rem; /* Восстанавливаем padding */
-        opacity: 1; /* Полная видимость */
+        max-height: 300px;
+        padding: 1rem 2rem;
+        opacity: 1;
     }
 
     .nav-main-links {

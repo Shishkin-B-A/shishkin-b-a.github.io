@@ -149,7 +149,12 @@ body {
 .btn-success { background: #27ae60; }
 .btn-danger { background: #dc3545; }
 .btn-dark { background: #333; }
-.btn-disabled { background: #95a5a6; cursor: not-allowed; }
+.btn-disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.65;
+}
 
 .btn:hover:not(.btn-disabled) {
     transform: translateY(-2px);
@@ -168,9 +173,11 @@ body {
     align-items: center;
     text-decoration: none;
     box-sizing: border-box;
+    gap: 0.4rem;
 }
 
 .tag-python { background: #3776ab; }
+.tag-vk { background: #0077FF; }
 .tag-tensorflow { background: #ff6f00; }
 .tag-default { background: #e0e6ea; color: var(--dark); }
 

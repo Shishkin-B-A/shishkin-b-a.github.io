@@ -78,4 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 300);
         }, 2000);
     }
+
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    
+    scrollToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+            });
+    });
+
 });

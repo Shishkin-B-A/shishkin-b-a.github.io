@@ -251,7 +251,7 @@ body {
         top: 50%;
         transform: translateY(-50%);
         z-index: 1001;
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 
     .container.nav-links {

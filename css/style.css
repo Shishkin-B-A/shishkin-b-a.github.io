@@ -22,7 +22,7 @@ body {
 
 /* Контейнеры */
 .container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 0 2rem;
 }
@@ -107,7 +107,7 @@ body {
 /* Карточки */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--gap);
 }
 
@@ -148,6 +148,12 @@ body {
 .btn-primary { background: var(--secondary); }
 .btn-success { background: #27ae60; }
 .btn-danger { background: #dc3545; }
+.btn-elib { background: #F26C4F; }
+.btn-doi { background: #FAB70D; }
+.btn-journal { background: #0db3fa; }
+
+
+
 .btn-dark { background: #333; }
 .btn-disabled {
     background: #95a5a6;
@@ -204,6 +210,14 @@ body {
     gap: 0.6rem;
 }
 
+meta-info.text {
+    display: block;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 10px;
+}
+
 /* Описание */
 .description {
     color: var(--text-gray);
@@ -237,7 +251,6 @@ body {
 .notification.active {
     opacity: 1;
 }
-
 /* Адаптивность */
 @media (max-width: 768px) {
     .navbar {
@@ -324,4 +337,8 @@ body {
     .title-md { font-size: 1.7rem; }
     .title-sm { font-size: 1.4rem; }
     .card { padding: 2rem; }
+
+    .card-grid {
+        grid-template-columns: 1fr; /* Одна колонка на узких экранах */
+    }
 }

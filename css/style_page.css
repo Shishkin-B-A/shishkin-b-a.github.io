@@ -1,14 +1,14 @@
 /* Специфичные стили для text-large.html */
 .text-large-section {
     padding: 4rem 0;
-    background: #fff;
+    background: #ecf0f1;
 }
 
 /* Контейнер для текста, ссылок и изображения */
 .text-wrapper {
     display: flex;
     gap: 2rem;
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     align-items: flex-start;
 }
@@ -40,6 +40,10 @@
     width: 50%;
     font-size: 0.9rem;
 }
+
+.btn-link.elib { background: #F26C4F; }
+.btn-link.doi { background: #FAB70D; }
+.btn-link.journal { background: #0db3fa; }
 
 .btn-link:hover {
     transform: translateY(-2px);
@@ -120,6 +124,51 @@
     text-align: center;
 }
 
+/* Футер с информацией */
+.info-footer {
+    background: #fafafa; /* Очень светлый серый, почти белый */
+    padding: 1rem 0; /* Компактная высота */
+    margin-top: 2rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.info-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left; /* Текст выровнен слева */
+}
+
+.info-footer p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+
+
+
+#copy-text {
+    position: relative;
+    cursor: pointer;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    border-radius: 5px;
+    transition: background 0.2s ease;
+}
+
+#copy-text::before {
+    content: "📋";
+    margin-right: 0.5rem;
+}
+#copy-text:hover {
+    background: #e9ecef;
+}
+
+
+
+
 /* Адаптивность для больших экранов (до 1400px) */
 @media (max-width: 1400px) {
     .text-wrapper {
@@ -142,12 +191,16 @@
     .text-footer {
         width: 50px;
     }
+
+    .info-footer .container {
+        max-width: 1000px;
+    }
 }
 
 /* Адаптивность для средних экранов (до 1024px) */
 @media (max-width: 1024px) {
     .text-wrapper {
-        max-width: 800px;
+        max-width: 900px;
         flex-wrap: wrap;
         gap: 1rem;
     }
@@ -167,6 +220,10 @@
     .text-footer {
         width: 50px;
     }
+
+    .info-footer .container {
+        max-width: 800px;
+    }
 }
 
 /* Адаптивность для планшетов (до 768px) */
@@ -178,7 +235,7 @@
     }
 
     .text-links {
-        width: 100px;
+        width: 300px;
         order: 2;
     }
 
@@ -208,6 +265,19 @@
         padding: 0.5rem;
         font-size: 0.85rem;
         width: 50px;
+    }
+
+    .info-footer {
+        padding: 0.75rem 0;
+    }
+
+    .info-footer p {
+        font-size: 0.95rem;
+    }
+
+    .info-footer .container {
+        padding: 0 1rem;
+        text-align: left;
     }
 }
 
@@ -245,5 +315,17 @@
         font-size: 0.75rem;
         padding: 0.4rem;
         width: 50px;
+    }
+
+    .info-footer {
+        padding: 0.5rem 0;
+    }
+
+    .info-footer p {
+        font-size: 0.9rem;
+    }
+
+    .info-footer .container {
+        padding: 0 0.5rem;
     }
 }

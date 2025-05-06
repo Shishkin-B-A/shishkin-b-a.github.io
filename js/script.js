@@ -46,13 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Ошибка: .nav-toggle или .container.nav-links не найдены');
     }
 
-    const emailLink = document.getElementById('copy-email');
+    const emailLink = document.getElementById('copy-text');
     if (emailLink) {
         emailLink.addEventListener('click', (e) => {
             e.preventDefault();
             const emailText = emailLink.textContent;
             navigator.clipboard.writeText(emailText).then(() => {
-                showNotification('Почта сохранена в буфер обмена');
+                showNotification('Сохранено в буфер обмена');ы
             }).catch(err => {
                 console.error('Ошибка копирования:', err);
             });
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             notification.className = 'notification';
             document.body.appendChild(notification);
         }
-        notification.innerHTML = '<i class="fas fa-clipboard"></i> Почта сохранена в буфер обмена';
+        notification.innerHTML = '<i class="fas fa-clipboard"></i> Сохранено в буфер обмена';
         notification.classList.add('active');
 
         setTimeout(() => {

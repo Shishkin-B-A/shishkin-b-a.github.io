@@ -237,6 +237,7 @@
     .text-links {
         width: 300px;
         order: 2;
+        font-size: 1rem;
     }
 
     .text-large {
@@ -293,7 +294,7 @@
     }
 
     .text-links {
-        width: 100px;
+        width: 200px;
         gap: 0.5rem;
     }
 

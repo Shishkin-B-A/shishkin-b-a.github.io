@@ -275,6 +275,8 @@ meta-info.text {
         top: 100%;
         left: 0;
         width: 100%;
+        max-width: 100vw;
+        box-sizing: border-box;
         background: var(--primary);
         padding: 0 2rem;
         box-shadow: var(--shadow-sm);
@@ -298,9 +300,10 @@ meta-info.text {
     }
 
     .nav-links a {
-        display: inline-block;
-        padding: 1rem 1rem;
-        width: 70%;
+        display: block;
+        padding: 1rem;
+        width: 100%;
+        box-sizing: border-box;
         transition: background 0.3s ease, color 0.3s ease;
     }
 
@@ -309,18 +312,9 @@ meta-info.text {
         background: var(--secondary);
         color: white;
     }
+
     /* Настройка "Об исследователе" */
-    .nav-links > a[href*="/About/about.html"]::before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 1px;
-        background: var(--light);
-        margin: 0.5rem 0;
-    }
-    .nav-links a[href*="/About/about.html"] {
-        margin-top: 1rem;
-    }
+    .nav-links > a[href*="/About/about.html"]::before,
     .nav-links > a[href="about.html"]::before {
         content: "";
         display: block;
@@ -329,6 +323,8 @@ meta-info.text {
         background: var(--light);
         margin: 0.5rem 0;
     }
+
+    .nav-links a[href*="/About/about.html"],
     .nav-links a[href="about.html"] {
         margin-top: 1rem;
     }
@@ -339,6 +335,6 @@ meta-info.text {
     .card { padding: 2rem; }
 
     .card-grid {
-        grid-template-columns: 1fr; /* Одна колонка на узких экранах */
+        grid-template-columns: 1fr;
     }
 }

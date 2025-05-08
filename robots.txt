@@ -1,0 +1,5 @@
+User-agent: *
+Allow: *.css
+Allow: *.js
+
+Sitemap: https://shishkin-b-a.github.io/sitemap.xml 

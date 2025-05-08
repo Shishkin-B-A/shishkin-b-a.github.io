@@ -1,5 +1,6 @@
 User-agent: *
 Allow: *.css
 Allow: *.js
+Disallow: /News/
 
 Sitemap: https://shishkin-b-a.github.io/sitemap.xml 

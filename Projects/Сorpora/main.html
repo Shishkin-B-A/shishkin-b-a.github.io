@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Персональный сайт исследователя Шишкина Б.А. - публикации, проекты, программное обеспечение и научные исследования">
+    <meta name="keywords" content="Шишкин Б.А., исследования, публикации, научные проекты, статьи, программное обеспечение">
+    <meta name="author" content="Шишкин Б.А.">
+    <meta name="robots" content="all">
+    <title>Шишкин Б.А. | Корпуса 3 лингвокультур</title>
+    <link rel="stylesheet" href="../../css/style_corp.css">
+    <script src="https://sql.js.org/dist/sql-wasm.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Навигация -->
+    <nav class="navbar">
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="container nav-links">
+            <div class="nav-main-links">
+                <a href="../../index.html"><i class="fas fa-home"></i> Главная</a>
+                <a href="../../Publications/publications.html"><i class="fas fa-book"></i> Публикации</a>
+                <a href="../projects.html" class="active"><i class="fas fa-database"></i> Проекты</a>
+                <a href="../../Software/software.html"><i class="fas fa-code"></i> ПО</a>
+            </div>
+            <a href="../../About/about.html"><i class="fas fa-user"></i> Об исследователе</a>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <a href="../projects.html" class="btn btn-primary"><i class="fas fa-chevron-left"></i> Назад</a>
+            <h1 class="title title-lg">Корпусный поиск</h1>
+            <form id="search-form">
+                <div class="search-main">
+                    <div class="form-group">
+                        <label for="query">Запрос (поиск в заголовке или содержимом):</label>
+                        <input type="text" id="query" name="query">
+                    </div>
+                </div>
+                <div class="filters">
+                    <div class="form-group">
+                        <label for="lang">Язык:</label>
+                        <select id="lang">
+                            <option value="">Все</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Сайт:</label>
+                        <select id="website">
+                            <option value="">Все</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="source">Источник:</label>
+                        <select id="source">
+                            <option value="">Все</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filters">
+                    <div class="form-group">
+                        <label for="type">Тип:</label>
+                        <select id="type">
+                            <option value="">Все</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="feature">Тональность:</label>
+                        <select id="feature">
+                            <option value="">Все</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ttv">ТТН:</label>
+                        <select id="ttv">
+                            <option value="">Все</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filters">
+                    <div class="form-group">
+                        <label for="date-from">Дата от:</label>
+                        <input type="date" id="date-from" name="date-from">
+                    </div>
+                    <div class="form-group">
+                        <label for="date-to">Дата до:</label>
+                        <input type="date" id="date-to" name="date-to">
+                    </div>
+                </div>
+                <div class="filters">
+                    <div class="form-group">
+                        <label for="left-context">Размер левого контекста (слова):</label>
+                        <input type="number" id="left-context" name="left-context" value="5" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="right-context">Размер правого контекста (слова):</label>
+                        <input type="number" id="right-context" name="right-context" value="5" min="0">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Поиск</button>
+            </form>
+
+            <div id="results" class="results-container">
+                <div id="concordance" class="concordance-list"></div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="detail-view"></div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+    <script src="../../js/script_corp.js" defer></script>
+</body>
+</html>

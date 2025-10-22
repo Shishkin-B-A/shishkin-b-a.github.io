@@ -138,7 +138,7 @@ function extractConcordances(text, query, leftWords, rightWords, isTitle) {
             const right = rightArr.join(' ');
             // Выделяем подстроку в слове
             const highlightedWord = word.replace(regex, match => `<span class="highlight">${match}</span>`);
-            concordances.push({ left, keyword: highlightedWord, right, source: isTitle ? 'Заголовок' : 'Содержание' });
+            concordances.push({ left, keyword: highlightedWord, right, source: isTitle ? 'Инфоповод' : 'Содержание' });
         }
     });
     return concordances;
@@ -177,7 +177,7 @@ function showArticleDetails(articleId) {
             Сайт: ${row.website_name}<br>
             Источник: ${row.source_name}<br>
             Тип: ${row.type_comment || 'N/A'}<br>
-            Тональность: ${row.feature_comment || 'N/A'}<br>
+            КС: ${row.feature_comment || 'N/A'}<br>
             ТТН: ${row.ttv_name || 'N/A'}<br>
             Дата: ${row.date}
         `;
@@ -337,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     left: '',
                     keyword: row.newsbreak,
                     right: '',
-                    source: 'Заголовок'
+                    source: 'Инфоповод'
                 });
             }
 

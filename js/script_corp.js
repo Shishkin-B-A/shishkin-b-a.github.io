@@ -16,7 +16,7 @@ async function initDB() {
         const SQL = await initSqlJs({
             locateFile: file => `https://sql.js.org/dist/${file}`
         });
-        const response = await fetch('../../Projects/Сorpora/corp.db');
+        const response = await fetch('../../Projects/Corpora/corp.db');
         if (!response.ok) {
             throw new Error('Не удалось загрузить базу данных');
         }
